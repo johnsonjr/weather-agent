@@ -1,0 +1,35 @@
+app:
+  name: "Weather Agent"
+  version: "1.0.0"
+  debug: false
+
+api:
+  weather_provider: "openweathermap"
+  base_url: "https://api.openweathermap.org/data/2.5"
+  cache_ttl_seconds: 300
+  timeout_seconds: 10
+  max_retries: 3
+
+llm:
+  provider: "anthropic"
+  model: "claude-3-haiku-20240307"
+  max_tokens: 1024
+  temperature: 0.7
+
+cache:
+  enabled: true
+  weather_ttl: 300
+  geocode_ttl: 86400
+  max_size: 100
+
+logging:
+  level: "INFO"
+  file: "logs/weather_agent.log"
+  max_bytes: 10485760
+  backup_count: 5
+
+cli:
+  default_units: "metric"
+  output_format: "plain"
+  color_output: true
+  interactive_mode: true
