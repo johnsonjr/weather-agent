@@ -221,7 +221,7 @@ class WeatherTool:
             )
 
             forecast_day = ForecastDay(
-                date=date_key,
+                date=datetime(date_key.year, date_key.month, date_key.day),
                 temp_min=min(temps),
                 temp_max=max(temps),
                 humidity=int(humidity_sum / len(items)),
